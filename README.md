@@ -66,11 +66,9 @@ The "Beyond QWERTY" project reimagines the traditional form-filling process by i
 ## **Setup Instructions**
 ### **Prerequisites**
 - Python (3.8 or higher)
-- Node.js (if using Express.js)
-- Azure Account with OpenAI and Cognitive Services enabled
 
 ### **Installation**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/beyond-qwerty.git
-   cd beyond-qwerty
+   git clone https://github.com/Nithin-Chakravarthi/Infosys-Springboard-Internship.git
+   cd Infosys-Springboard-Internship
