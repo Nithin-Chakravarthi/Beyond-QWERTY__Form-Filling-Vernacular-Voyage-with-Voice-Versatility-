@@ -70,5 +70,5 @@ The "Beyond QWERTY" project reimagines the traditional form-filling process by i
 ### **Installation**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Nithin-Chakravarthi/Infosys-Springboard-Internship.git
-   cd Infosys-Springboard-Internship
+   git clone https://github.com/Nithin-Chakravarthi/Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility.git
+   cd Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility
