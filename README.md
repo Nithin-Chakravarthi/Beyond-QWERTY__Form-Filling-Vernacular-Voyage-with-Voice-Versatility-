@@ -1,193 +1,136 @@
-<<<<<<< HEAD
-# **Beyond QWERTY: Form Filling's with Voice Versatility**
-
-## **Overview**
-The "Beyond QWERTY" project reimagines the traditional form-filling process by introducing a voice-driven, multilingual solution powered by **Azure OpenAI** and **GPT**. Designed to assist **Frontline Workers (FLWs)** in diverse fields, the system simplifies workflows, eliminates language barriers, and boosts productivity. Whether it's opening a bank account, creating a digital identity, or applying for jobs, this solution ensures an accessible and user-friendly experience.
-
----
-
-## **Features**
-- **Voice-Driven Form Filling**: Fill forms using natural language voice input.
-- **Multilingual Support**: Overcome language barriers with real-time translation capabilities.
-- **Workflow Automation**: Save time with auto-filled forms and seamless submissions.
-- **Versatile Applications**: Adaptable for various use cases such as banking, job applications, and e-governance.
-- **Secure and Scalable**: Ensures data privacy while supporting multiple users simultaneously.
-
----
+Voice-Enabled Bank Form Application
 
 
+This is a web application that enables users to fill out a bank form using voice input while providing secure user authentication. The application is built with Flask and utilizes Supabase as the backend for data storage.
 
-![image](https://github.com/user-attachments/assets/4a211b1a-5f1a-4c91-9923-87765ead30ec)
-=======
-#Project Structure
+📁 Project Structure
+
 FORM/
-├── .venv/                     
-├── .vscode/
-├── flask_session/         -get created through library 
-├── static/                -add like these 
-│ ├── auth_script.js
-│ ├── bank_script.js
-│ └── bank_style.css
-├── templates/             -add like these 
-│ ├── auth_form.html
-│ └── bank_form.html
-├── .env
-├── .env.example
-├── app.log 
-├── app.py                 -add like these 
-├── README.md
-└── requirements.txt
+├── .venv/                     # Virtual environment (recommended)
+├── .vscode/                   # VS Code configurations
+├── flask_session/             # Created through flask-session library
+├── static/                    # Static files
+│   ├── auth_script.js         # Authentication-related JS
+│   ├── bank_script.js         # Bank form handling JS
+│   └── bank_style.css         # Stylesheet for bank form
+├── templates/                 # HTML templates
+│   ├── auth_form.html         # User authentication page
+│   └── bank_form.html         # Bank form page
+├── .env                       # Environment variables (keep this secret)
+├── .env.example               # Example .env file
+├── app.log                    # Application logs
+├── app.py                     # Main Flask application
+├── README.md                  # Documentation
+└── requirements.txt            # Python dependencies
 
-# Voice-Enabled Bank Form Application
-[Click here to see the demo video](<https://drive.google.com/file/d/1SUTJHkhfNT-ucLxOVnBwaBixPPvD-GKr/view?usp=sharing>)
-This is a web application for a bank form that uses voice input and provides user authentication.
+🛠 Local Setup Guide
 
-## Local Setup Guide
+Follow these instructions to set up and run the application on your local machine.
 
-Follow these instructions to run the application locally on your development machine.
+Prerequisites
 
-### Prerequisites
--   **Python 3.6+:** Ensure Python is installed.
--   **pip:** Python package installer should also be installed.
--   **Git:** Version control system should be installed.
-    * Install Git [here](https://git-scm.com/downloads)
+Ensure you have the following installed:
 
-### Step-by-step Installation
-1.  **Clone the Repository:**
+Python 3.6+ – Download from here
 
-    ```bash
-    git clone <YOUR_GITHUB_REPOSITORY_URL>
-    cd <YOUR_PROJECT_DIRECTORY_NAME>
-    ```
+pip – Comes pre-installed with Python
 
-    *Replace `<YOUR_GITHUB_REPOSITORY_URL>` with the URL of your repository.*
-    *Replace `<YOUR_PROJECT_DIRECTORY_NAME>` with the name of your project's directory.*
+Git – Download from here
 
-2.  **Set Up a Virtual Environment (Recommended):**
+🚀 Installation Steps
 
-    ```bash
-    python3 -m venv venv
-    python -m venv venv(add any name)
-    source venv/bin/activate  # On macOS/Linux
-    venv\Scripts\activate # On Windows
-    ```
+1️⃣ Clone the Repository
 
+git clone <repository_url>
+cd <project_directory>
 
-3.  **Install Dependencies:**
+Replace <repository_url> with the URL of your repository and <project_directory> with your project's name.
 
-    ```bash
-    pip install -r requirements.txt
-    pip install python-dotenv
-    pip install bcrypt
-    pip install requests
-    pip  install flask-session
-    pip install flask
-    
-    ```
+2️⃣ Set Up a Virtual Environment (Recommended)
 
-4.  **Create a `.env` File:**
+# On macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
 
-    *   Create a `.env` file in your project's root directory.
+# On Windows
+python -m venv venv
+venv\Scripts\activate
 
-    *   Add the following variables to the `.env` file:
+3️⃣ Install Dependencies
 
-        ```env
-        SECRET_KEY=<YOUR_SECRET_KEY>
-        SUPABASE_URL=<YOUR_SUPABASE_URL>
-        SUPABASE_KEY=<YOUR_SUPABASE_KEY>
-        ```
+pip install -r requirements.txt
 
-        *   Replace `<YOUR_SECRET_KEY>` with a long, random string.
-        *   Replace `<YOUR_SUPABASE_URL>` with your Supabase project URL.
-        *   Replace `<YOUR_SUPABASE_KEY>` with your Supabase API key.
+Additionally, install the required libraries if needed:
 
-5.  **Run the Application:**
+pip install python-dotenv bcrypt requests flask-session flask
 
-    ```bash
-    python app.py
-    ```
-    The application will start on http://127.0.0.1:5000/
+4️⃣ Create a .env File
 
-6.  **Open in your browser:**
-     *   Open a web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to access the application.
+Create a .env file in your project’s root directory.
 
-7.  **Sign up with a valid email address (gmail.com, yahoo.com, outlook.com, hotmail.com, aol.com, or icloud.com)**
-    *  Log in with the same credentials you created.
-    *  Then fill in the form to submit to the database.
-    
- ### Notes
+Add the following variables:
 
--   Ensure the .env file is added to your .gitignore file to prevent pushing sensitive data.
+SECRET_KEY=<your_secret_key>
+SUPABASE_URL=<your_supabase_url>
+SUPABASE_KEY=<your_supabase_api_key>
 
-### Dependencies
-The dependencies for this project are listed in the `requirements.txt` file.
+Replace <your_secret_key> with a long, random string.
 
-### Supabase Setup
-This application uses Supabase as the backend for storing the user and bank form data. Please make sure you have properly setup your Supabase project and database tables according to the column names in `transform_payload` function.
->>>>>>> eac4b07 (project updated)
+Replace <your_supabase_url> and <your_supabase_api_key> with your Supabase project credentials.
 
+5️⃣ Run the Application
 
+python app.py
 
+The application will start on http://127.0.0.1:5000/.
 
-<<<<<<< HEAD
-## **Technologies Used**
-### **Frontend**
-- HTML/CSS/JavaScript (if applicable for web-based interface)
+6️⃣ Open in Your Browser
 
-### **Backend**
-- **Python**: Flask or FastAPI
-- **Node.js**: Express.js (alternative option)
+Go to http://127.0.0.1:5000/ to access the application.
 
-### **Cloud Services**
-- **Azure Cognitive Services**: Speech-to-Text, Translator API
-- **Azure OpenAI**: GPT for language understanding
-- **Azure App Services**: Deployment and hosting
+7️⃣ Sign Up & Use the Form
 
-### **APIs and Libraries**
-- **Speech SDK**: Real-time voice recognition
-- **Translator API**: Multilingual translation
-- **PyTorch**: NLP model integration (optional)
-- **REST/GraphQL**: API communication
+Sign up with a valid email address (e.g., Gmail, Yahoo, Outlook, Hotmail, AOL, iCloud).
 
-### **Testing and Deployment**
-- **Testing**: PyTest, Selenium
-- **Deployment**: Azure Kubernetes Service (AKS), Azure Monitor
+Log in using the same credentials.
 
----
+Fill in the bank form using voice input and submit the data to the database.
 
-## **Modules**
-1. **Voice Input and Language Processing**
-   - Converts speech to text and maps it to form fields.
-   - Supports real-time multilingual input and translation.
+📝 Notes
 
-2. **Workflow Automation and Optimization**
-   - Automates repetitive form-filling tasks.
-   - Provides templates for various workflows.
+Ensure the .env file is added to .gitignore to prevent pushing sensitive data.
 
-3. **Integration with Existing Services**
-   - Connects seamlessly with external systems like banking software or government platforms.
+If you face any issues, ensure that Supabase is properly set up and the database tables match the required schema.
 
-4. **Testing and Deployment**
-   - Ensures the system is reliable, scalable, and user-friendly.
+📌 Dependencies
 
----
+The required dependencies are listed in the requirements.txt file. Install them using:
 
-## **Setup Instructions**
-### **Prerequisites**
-- Python (3.8 or higher)
+pip install -r requirements.txt
 
-### **Installation**
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Nithin-Chakravarthi/Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility.git
-   cd Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility
-=======
+🏗 Supabase Setup
 
+This application uses Supabase as the backend for storing user authentication and bank form data. Ensure that:
 
+You have a Supabase account and project set up.
 
+Your Supabase database has the required table structures as per the transform_payload function in app.py.
 
+📌 Contribution Guidelines
 
+Fork the repository and create a new branch.
 
+Make your changes and commit them.
 
+Push your changes to your fork.
 
->>>>>>> eac4b07 (project updated)
+Submit a pull request for review.
+
+📞 Support
+
+For any issues, feel free to raise an issue in the repository or contact the project maintainer.
+
+GitHub Repository: Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility
+
+Enjoy using the Voice-Enabled Bank Form Application! 🎙️💻
+
