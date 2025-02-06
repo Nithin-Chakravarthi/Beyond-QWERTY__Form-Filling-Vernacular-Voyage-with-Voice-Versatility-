@@ -1,136 +1,139 @@
-Voice-Enabled Bank Form Application
+# Beyond-QWERTY: Form-Filling Project
 
+## Quick Links
+- 🌐 [Live Website](https://voice-bank-form.onrender.com/)
+- 📱 [Download Android APK](https://github.com/ARYANJATHAR/QWERTY_FORM_FILLING_PROJECT/blob/main/BankForm.apk)
+- 🎥 [Watch Demo Video](https://drive.google.com/file/d/1SUTJHkhfNT-ucLxOVnBwaBixPPvD-GKr/view?usp=sharing)
 
-This is a web application that enables users to fill out a bank form using voice input while providing secure user authentication. The application is built with Flask and utilizes Supabase as the backend for data storage.
+## ⚠️ Important Note
+The website is hosted on Render's free tier, which means the server goes to sleep when inactive. On your first visit, it may take a few seconds to wake up (cold start). If you encounter a 502 (Bad Gateway error), please wait a few minutes and try again.
 
-📁 Project Structure
+## Project Description
+Beyond-QWERTY is a pioneering voice-enabled, cross-platform solution that revolutionizes bank account application form completion. The application offers dual input methods - voice and traditional text - making it accessible to a diverse user base. It seamlessly captures user data, performs real-time validation, and generates PDF applications that are automatically emailed to users. The project is available both as a web application and an Android application (APK), built from a unified codebase.
 
+## Web Application Features
+
+### 🔐 Secure User Authentication
+- User sign-up and sign-in with email, password, and username
+- Password hashing using bcrypt for enhanced security
+- Robust session management
+- Forgot Password functionality with time-limited reset tokens
+
+### 📝 Interactive Bank Account Application Form
+- Comprehensive form sections:
+  - Personal information
+  - Contact details
+  - Employment status
+  - Income details
+  - Account preferences
+  - Nominee information
+- Voice input support for all text fields via Speech Recognition API
+- Real-time error detection and display
+- Dual validation: client-side and server-side
+
+### 📄 PDF Generation and Email Notifications
+- Automated PDF generation of completed applications using ReportLab
+- Instant email delivery of application PDFs
+- Automated password reset and confirmation emails
+
+### 💾 Data Management
+- Secure data storage using Supabase (cloud-based Postgres database)
+- Protected API endpoints for database interactions
+
+### 🎨 User Interface
+- Modern, responsive design
+- Light/dark theme toggle
+- Intuitive layout with informative notifications
+- Loading indicators for better user experience
+
+## Android Application Features
+
+### 📱 Mobile-First Experience
+- Direct installation on Android devices
+- Complete feature parity with web version
+- Native app-like experience
+- Smooth performance without browser dependency
+
+## Technology Stack
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+- Python
+- Flask Framework
+
+### Database
+- Supabase (Postgres)
+
+### Mobile Packaging
+- PWA Builder for APK generation
+
+## Project Structure
+```
 FORM/
-├── .venv/                     # Virtual environment (recommended)
-├── .vscode/                   # VS Code configurations
-├── flask_session/             # Created through flask-session library
-├── static/                    # Static files
-│   ├── auth_script.js         # Authentication-related JS
-│   ├── bank_script.js         # Bank form handling JS
-│   └── bank_style.css         # Stylesheet for bank form
-├── templates/                 # HTML templates
-│   ├── auth_form.html         # User authentication page
-│   └── bank_form.html         # Bank form page
-├── .env                       # Environment variables (keep this secret)
-├── .env.example               # Example .env file
-├── app.log                    # Application logs
-├── app.py                     # Main Flask application
-├── README.md                  # Documentation
-└── requirements.txt            # Python dependencies
+├── .venv/
+├── .vscode/
+├── flask_session/
+├── static/
+│   ├── auth_script.js
+│   ├── bank_script.js
+│   └── bank_style.css
+├── templates/
+│   ├── auth_form.html
+│   └── bank_form.html
+├── .env
+├── .env.example
+├── app.log
+├── app.py
+├── README.md
+└── requirements.txt
+```
 
-🛠 Local Setup Guide
+## Local Development Setup
 
-Follow these instructions to set up and run the application on your local machine.
+### Prerequisites
+- Python 3.6+
+- pip
+- Git
+- Modern web browser with microphone support
 
-Prerequisites
+### Installation Steps
+1. Clone the repository:
+```bash
+git clone https://github.com/Nithin-Chakravarthi/Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility-.git
+cd Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility-
+```
 
-Ensure you have the following installed:
+2. Set up virtual environment:
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Unix/macOS
+.venv\Scripts\activate     # On Windows
+```
 
-Python 3.6+ – Download from here
-
-pip – Comes pre-installed with Python
-
-Git – Download from here
-
-🚀 Installation Steps
-
-1️⃣ Clone the Repository
-
-git clone <repository_url>
-cd <project_directory>
-
-Replace <repository_url> with the URL of your repository and <project_directory> with your project's name.
-
-2️⃣ Set Up a Virtual Environment (Recommended)
-
-# On macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-# On Windows
-python -m venv venv
-venv\Scripts\activate
-
-3️⃣ Install Dependencies
-
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
+```
 
-Additionally, install the required libraries if needed:
+4. Configure environment variables:
+- Create a `.env` file with:
+```env
+SECRET_KEY=your_secret_key
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_key
+```
 
-pip install python-dotenv bcrypt requests flask-session flask
-
-4️⃣ Create a .env File
-
-Create a .env file in your project’s root directory.
-
-Add the following variables:
-
-SECRET_KEY=<your_secret_key>
-SUPABASE_URL=<your_supabase_url>
-SUPABASE_KEY=<your_supabase_api_key>
-
-Replace <your_secret_key> with a long, random string.
-
-Replace <your_supabase_url> and <your_supabase_api_key> with your Supabase project credentials.
-
-5️⃣ Run the Application
-
+5. Run the application:
+```bash
 python app.py
+```
 
-The application will start on http://127.0.0.1:5000/.
+## Contributing
+We welcome contributions! Please feel free to submit pull requests.
 
-6️⃣ Open in Your Browser
-
-Go to http://127.0.0.1:5000/ to access the application.
-
-7️⃣ Sign Up & Use the Form
-
-Sign up with a valid email address (e.g., Gmail, Yahoo, Outlook, Hotmail, AOL, iCloud).
-
-Log in using the same credentials.
-
-Fill in the bank form using voice input and submit the data to the database.
-
-📝 Notes
-
-Ensure the .env file is added to .gitignore to prevent pushing sensitive data.
-
-If you face any issues, ensure that Supabase is properly set up and the database tables match the required schema.
-
-📌 Dependencies
-
-The required dependencies are listed in the requirements.txt file. Install them using:
-
-pip install -r requirements.txt
-
-🏗 Supabase Setup
-
-This application uses Supabase as the backend for storing user authentication and bank form data. Ensure that:
-
-You have a Supabase account and project set up.
-
-Your Supabase database has the required table structures as per the transform_payload function in app.py.
-
-📌 Contribution Guidelines
-
-Fork the repository and create a new branch.
-
-Make your changes and commit them.
-
-Push your changes to your fork.
-
-Submit a pull request for review.
-
-📞 Support
-
-For any issues, feel free to raise an issue in the repository or contact the project maintainer.
-
-GitHub Repository: Beyond-QWERTY__Form-Filling-Vernacular-Voyage-with-Voice-Versatility
-
-Enjoy using the Voice-Enabled Bank Form Application! 🎙️💻
-
+## Conclusion
+Beyond-QWERTY represents a significant step forward in making banking services more accessible through voice technology and cross-platform availability. The project demonstrates how modern web technologies can be leveraged to create user-friendly, secure, and efficient financial applications.
